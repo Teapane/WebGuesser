@@ -9,11 +9,11 @@ def check_guess(guess)
     @@secret_number = rand(101)
     @@count = 5
   end
-  return "correct!" if correct? guess
-  return "way too high!" if way_too_high? guess
-  return "too high!" if too_high? guess
-  return "way too low!" if way_too_low? guess
-  return "too low!" if too_low? guess
+  return "correct! You are awesome" if correct? guess
+  return "way too high, keep trying!" if way_too_high? guess
+  return "too high, keep trying!" if too_high? guess
+  return "way too low yo!" if way_too_low? guess
+  return "too low yo!" if too_low? guess
 end
 
 def correct?(guess)
@@ -29,19 +29,14 @@ def way_too_high?(guess)
 end
 
 def too_low?(guess)
-  guess < @@secret_number
+  guess < @@secret_number 
 end
 
 def way_too_low?(guess)
   guess < @@secret_number - 5
 end
 
-def set_color(message)
-  color = 'ff69b4'
-  color = 'green' if /correct/=~message
-  color = 'red' if /way/=~message
-  color
-end
+
 
 get '/' do
   guess = params["guess"].to_i
