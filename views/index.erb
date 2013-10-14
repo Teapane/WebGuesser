@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      body {
+        background:
+        <%=
+          set_color(message)
+        %>;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+    <%=
+      if cheat=="true"
+        "The secret number is #{number}"
+      end
+      "The secret number is #{number}"
+    %>
+    </p>
+
+    <form>
+      <input type='text' name='guess' />
+      <input type='submit' value='Guess!' />
+    </form>
+
+    <p>
+    Your guess is <%= message %>
+    </p>
+
+  </body>
+</html>
